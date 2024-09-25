@@ -1,0 +1,43 @@
+{
+      "generation": {
+            "rand_seed": 42,
+            "pool": 1
+      },
+      "spectrum": {
+            "observation_duration": 256,
+            "sig_types": [
+                  {
+                        "format": "psk",
+                        "order": 2,
+                        "label": "BPSK"
+                  }
+            ],
+            "max_signals": 1,
+            "allow_collisions_flag": false,
+            "max_attempts": 100
+      },
+      "burst_defaults": {
+            "cent_freq": [
+                  0.0,
+                  0.0
+            ],
+            "bandwidth": [
+                  0.5,
+                  0.5
+            ],
+            "start": [
+                  0,
+                  0
+            ],
+            "duration": [
+                  256,
+                  256
+            ]
+      },
+      "iq_defaults": {
+            "snr": [
+                  10,
+                  10
+            ]
+      }
+}

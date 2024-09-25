@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools >= 70.0", "wheel >= 0.43"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytorch_ai_harness"
+version = "2024.0.1"
+dependencies = ["torch"]
+
+requires-python = ">= 3.8"
+authors = [
+  {name = "Virginia Tech National Security Institute"}
+]
+maintainers = [
+  {name = "Stephen Adams", email = "scadams21@vt.edu"}
+]
+description = "Pytorch AI Test Harness Prototype"
+readme = "README.md"
+license = {text = "MIT License"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pytorch_ai_harness"]
