@@ -9,4 +9,4 @@ dependencies:
   - scikit-learn>=1.2.2
   - pip:
     - torch>=2.0.1
-    - git+https://github.com/vtnsi/rfml_tuts.git
+    - git+https://github.com/vtnsi/pywaspgen.git
