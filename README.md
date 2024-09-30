@@ -18,7 +18,7 @@ Use the package manager [conda](https://anaconda.org/conda-forge/stable-baseline
 
 ```bash
 conda env create -f environment.yml
-conda activate rfml_education_material
+conda activate rfml
 jupyter lab
 ```
 
