@@ -18,8 +18,8 @@ import torch
 from torch.utils.data import Dataset
 
 # Py-waspgen packages
-import py_waspgen.burst_datagen as burst_datagen
-import py_waspgen.iq_datagen as iq_datagen
+import pywaspgen.burst_datagen as burst_datagen
+import pywaspgen.iq_datagen as iq_datagen
 
 from .featuredata_gen import featuredata_gen
 
@@ -118,11 +118,11 @@ def IQ_data_gen(sig_filenames, num_seq, obs_len, generate_features=False):
         for k in range(num_seq):
 
             # create the burst list from py_waspgen
-            burst = burst_datagen.burst_datagen(sig_filename)
+            burst = burst_datagen.BurstDatagen(sig_filename)
             burst_list = burst.gen_burstlist()
 
             # generate the data using py_waspgen
-            iq_gen = iq_datagen.iq_datagen(sig_filename)
+            iq_gen = iq_datagen.IQDatagen(sig_filename)
             iq_data, _ = iq_gen.gen_iqdata(burst_list)
 
             # normalize data
@@ -199,12 +199,19 @@ def create_signal_jsons(dir_name,
                                   "sig_types": [signal],
                                   "max_signals": 1,
                                   "allow_collisions_flag": False,
-                                  "max_attempts": 100},
+                                  "max_attempts": 100,
+                                  "save_modems": False},
                      "burst_defaults": {"cent_freq": cent_freq,
                                         "bandwidth": bandwidth,
                                         "start": start,
                                         "duration": duration},
-                     "iq_defaults": {"snr": snr}
+                     "iq_defaults": {"snr": snr},
+                     "pulse_shape_defaults": {"format": "RRC",
+                                              "beta": [ 0.1, 0.9 ],
+                                              "span": [ 10, 20 ],
+                                              "window": {
+                                                  "type": "kaiser",
+                                                  "params": 5}}
                      }
 
         filename = dir_name + '/' + signal["label"] + '.json'

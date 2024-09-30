@@ -14,7 +14,8 @@
             ],
             "max_signals": 1,
             "allow_collisions_flag": false,
-            "max_attempts": 100
+            "max_attempts": 100,
+            "save_modems": false
       },
       "burst_defaults": {
             "cent_freq": [
@@ -39,5 +40,20 @@
                   10,
                   10
             ]
+      },
+      "pulse_shape_defaults": {
+            "format": "RRC",
+            "beta": [
+                  0.1,
+                  0.9
+            ],
+            "span": [
+                  10,
+                  20
+            ],
+            "window": {
+                  "type": "kaiser",
+                  "params": 5
+            }
       }
 }
