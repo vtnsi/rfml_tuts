@@ -14,7 +14,7 @@ The *py_waspgen* package is also required.
 
 ## Installation and Quickstart
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the prototype AI test harness class from the root directory of this repository.
+Use the package manager [conda](https://anaconda.org/conda-forge/stable-baselines3) to install necessary dependencies from the internet. Pip is also used to install Py-Waspgen from GitHub
 
 ```bash
 conda env create -f environment.yml
